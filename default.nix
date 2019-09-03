@@ -3,5 +3,8 @@
 
 rec {
   message = "Hello ${greetee}";
-  message2 = "The message is '${message}'";
+  message2 = ''
+    The message is:
+    ${message}
+  '';
 }
