@@ -1,12 +1,12 @@
-# Run `nix-instantiate --strict --json --eval default.nix | jq`
-let
-  set1 = {
-    a = 1;
-    b = 2;
-  };
-  set2 = {
-    a = 3;
-    c = 1;
-  };
+# Run `nix-shell` and call `which wget`
+# Run `nix-shell --pure` and
+#   - call `which wget`
+#   - call `which curl`
+{ pkgs ? import <nixpkgs> { }
+}:
 
-in set1.c or "no c attribute present"
+builtins.derivation {
+  name = "test";
+  system = builtins.currentSystem;
+  builder = ./builder.sh;
+}
