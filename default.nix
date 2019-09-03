@@ -9,4 +9,4 @@ let
     c = 1;
   };
 
-in set1 // set2
+in set1 ? c
