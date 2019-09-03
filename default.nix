@@ -5,8 +5,6 @@
 { pkgs ? import <nixpkgs> { }
 }:
 
-builtins.derivation {
-  name = "test";
-  system = builtins.currentSystem;
-  builder = ./builder.sh;
+pkgs.mkShell {
+  buildInputs = with pkgs; [ curl which ];
 }
