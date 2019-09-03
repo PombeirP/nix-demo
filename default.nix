@@ -9,4 +9,4 @@ let
     c = 1;
   };
 
-in set1 ? c
+in set1.c or "no c attribute present"
